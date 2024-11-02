@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: #e0f7fa;
+        }
+        .weather-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #00796b;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+        .search-bar button {
+            padding: 8px 12px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #00796b;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .result {
+            font-size: 18px;
+            color: #333333;
+        }
+        .result p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="weather-container">
+    <h1>Weather Detector</h1>
+    <form action="" method='POST'>
+        <div class="search-bar">
+            <input type="text" name='city' placeholder="Enter city name">
+            <button>Search</button>
+            {% csrf_token %}
+        </div>
+    </form>
+    <div class="result">
+        <p><strong>City:</strong>{{city}}</p>
+        {% comment %} <p><strong>Coordinates:</strong>{{weather_data.coordinates}}</p> {% endcomment %}
+        <p><strong>Temperature:</strong>{{weather_data.temperature}}</p>
+        <p><strong>Humidity:</strong>{{weather_data.humidity}}</p>
+    </div>
+</div>
+
+</body>
+</html>
