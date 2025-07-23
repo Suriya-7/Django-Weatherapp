@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: django-weather-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn myproject.wsgi:application
+    autoDeploy: true
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: myproject.settings
