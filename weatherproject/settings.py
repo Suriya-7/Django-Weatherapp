@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^m+ms#9p8lt+gk@g3g14n!4(b9hc*k*lcn^6f@-t0f&#h#oh&$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["django-weatherapp.onrender.com', 'localhost', '127.0.0.1"]
+ALLOWED_HOSTS = ["django-weatherapp.vercel.app, 'localhost', '127.0.0.1"]
 
 
 # Application definition
